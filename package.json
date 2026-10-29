@@ -1,0 +1,46 @@
+{
+  "name": "dsh-skill-nudge",
+  "version": "0.1.0",
+  "description": "Count tool calls per session and, once a threshold is crossed, remind the model to distill the finished workflow into a reusable skill (the DSH counterpart of WorkBuddy's memory_and_skills_reminder).",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib/",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "license": "MIT",
+  "author": "MYiYang <1791500400@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MYiYang/dsh-skill-nudge.git"
+  },
+  "homepage": "https://github.com/MYiYang/dsh-skill-nudge#readme",
+  "bugs": {
+    "url": "https://github.com/MYiYang/dsh-skill-nudge/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "skill",
+    "nudge",
+    "pre-step"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/nudge.test.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# dsh-skill-nudge bundle patch.
+#
+# Mounts the Host half only: one `agent/pre-step` listener (decides whether to
+# nudge) plus one `tools/result` listener (counts calls). No route, no UI, no
+# dependency beyond the harness itself.
+#
+# Every setting is optional and overridable from the profile's own patch layer:
+#
+#   - id: skill-nudge
+#     name: 'dsh-skill-nudge'
+#     config:
+#       enabled: true              # master switch
+#       threshold: 8               # tool calls before the first nudge
+#       errorThreshold: 2          # ...or this many failed calls
+#       minCallsWithErrors: 4      # ...but never before this many calls total
+#       recheckEvery: 12           # calls between later nudges
+#       maxNudges: 3               # cap per session
+#       trackSubagents: false      # ignore delegated child agents
+#       skillHome: '~/.dsh/skills' # shown in the reminder text
+- insert:
+    - id: skill-nudge
+      name: 'dsh-skill-nudge'
