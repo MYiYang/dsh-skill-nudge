@@ -1,5 +1,8 @@
 # dsh-skill-nudge
 
+[![npm](https://img.shields.io/npm/v/dsh-skill-nudge.svg)](https://www.npmjs.com/package/dsh-skill-nudge)
+[![license](https://img.shields.io/npm/l/dsh-skill-nudge.svg)](LICENSE)
+
 把 WorkBuddy 的「干完活顺手沉淀成 skill」搬进 DSH。
 
 WorkBuddy 靠一段每轮注入的 `<memory_and_skills_reminder>` 提醒模型：多步任务（8+ 次工具调用）、修过棘手错误、发现非平凡流程，就该把它写成 skill。DSH 的 skill 子系统（`dsh-skill-filesystem` 发现 + `dsh-tool-skill` 目录投影 + 按需加载）早就齐了，唯独缺这句提醒——这个插件补的就是这一环。
@@ -20,7 +23,13 @@ WorkBuddy 靠一段每轮注入的 `<memory_and_skills_reminder>` 提醒模型�
 
 ## 安装
 
-在 profile 里挂一个 link 依赖：
+已发布到 npm，直接装即可：
+
+```bash
+dsh plugin --profile desktop add dsh-skill-nudge
+```
+
+改源码或本地调试时，改用 link 依赖：
 
 ```bash
 dsh plugin --profile desktop add link:F:/ssdwork/vscode/work/zs/work/plugins/dsh-skill-nudge
